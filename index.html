@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Singh Piyush Santosh | .NET Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">Piyush<span>.dev</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><button class="nav-btn" data-scroll="about">About</button></li>
+        <li><button class="nav-btn" data-scroll="experience">Experience</button></li>
+        <li><button class="nav-btn" data-scroll="projects">Projects</button></li>
+        <li><button class="nav-btn" data-scroll="skills">Skills</button></li>
+        <li><button class="nav-btn" data-scroll="education">Education</button></li>
+        <li><button class="nav-btn" data-scroll="achievements">Achievements</button></li>
+        <li><button class="nav-btn nav-cta" data-scroll="contact">Contact</button></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">Singh Piyush <span>Santosh</span></h1>
+      <div class="hero-title">
+        <span class="typed-text" id="typed"></span><span class="cursor">|</span>
+      </div>
+      <p class="hero-location">📍 Bengaluru, Karnataka, India</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" data-scroll="projects">View My Work</button>
+        <button class="btn btn-outline" data-scroll="contact">Get In Touch</button>
+        <a href="assets/resume.pdf" download="Singh_Piyush_Santosh_Resume.pdf" class="btn btn-download">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume
+        </a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/singh-piyush-santosh/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://github.com/piyushsinghpnb" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://leetcode.com/u/piyushsinghpnbe2000/" target="_blank" rel="noopener" aria-label="LeetCode">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 00-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 00-1.209 2.104 5.35 5.35 0 00-.125.513 5.527 5.527 0 00.062 2.362 5.83 5.83 0 00.349 1.017 5.938 5.938 0 001.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 00-1.951-.003l-2.396 2.392a3.021 3.021 0 01-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 01.066-.523 2.545 2.545 0 01.619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 00-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0013.483 0zm-2.866 12.815a1.38 1.38 0 00-1.38 1.382 1.38 1.38 0 001.38 1.382H20.79a1.38 1.38 0 001.38-1.382 1.38 1.38 0 00-1.38-1.382z"/></svg>
+        </a>
+        <a href="https://www.codechef.com/users/nitroracer19" target="_blank" rel="noopener" aria-label="CodeChef">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.257 0C7.112.04 3.199 2.694 1.485 6.482c-.897 1.975-1.127 4.225-.76 6.352.368 2.127 1.388 4.13 2.866 5.733 1.45 1.572 3.33 2.73 5.38 3.29 2.05.56 4.24.51 6.26-.15 1.98-.64 3.77-1.85 5.1-3.46 1.33-1.6 2.17-3.57 2.42-5.61.26-2.04-.07-4.15-.95-6.01C20.5 4.1 18.9 2.44 16.97 1.37 15.12.34 12.99-.02 11.257 0zm.536 1.77c1.63-.03 3.27.35 4.7 1.14 1.44.8 2.67 1.98 3.52 3.39.86 1.41 1.33 3.04 1.33 4.68 0 1.64-.47 3.27-1.33 4.68-.85 1.41-2.08 2.59-3.52 3.39-1.43.79-3.07 1.17-4.7 1.14-1.63.03-3.27-.35-4.7-1.14-1.44-.8-2.67-1.98-3.52-3.39C2.26 14.25 1.79 12.62 1.79 10.98c0-1.64.47-3.27 1.33-4.68.85-1.41 2.08-2.59 3.52-3.39 1.43-.79 3.07-1.17 4.7-1.14zm-.07 2.47c-.97.01-1.94.24-2.82.67-.88.43-1.66 1.06-2.27 1.84-.61.78-.99 1.71-1.1 2.68-.11.97.06 1.96.49 2.84.43.88 1.1 1.64 1.93 2.18.83.54 1.79.84 2.77.87.98.03 1.96-.21 2.82-.69.86-.48 1.58-1.19 2.07-2.05.49-.86.73-1.84.69-2.82-.04-.98-.35-1.94-.9-2.76-.55-.82-1.32-1.48-2.21-1.9-.89-.42-1.88-.62-2.87-.61l.4.75z"/></svg>
+        </a>
+        <a href="mailto:piyushsinghpnbe2000@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-.9.732-1.636 1.636-1.636h.749L12 10.09l9.615-6.269h.749A1.636 1.636 0 0124 5.457z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll Down</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About <span>Me</span></h2>
+      <div class="about-grid">
+        <div class="about-avatar">
+          <div class="avatar-ring">
+            <div class="avatar-inner">
+              <span class="avatar-initials">PS</span>
+            </div>
+          </div>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Projects Delivered</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">8.4</span>
+              <span class="stat-label">CGPA (B.Tech)</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p>I'm a <strong>Full Stack .NET Developer</strong> based in Bengaluru, passionate about building robust and scalable software solutions. I specialize in C#, MS SQL, PL-SQL, and the .NET ecosystem.</p>
+          <p>Currently working at <strong>Medi Assist Healthcare Service Ltd</strong> as a Software Engineer, where I contribute to backend services including authentication servers, caching layers, and message queue systems.</p>
+          <p>I enjoy solving complex backend challenges and have hands-on experience with modern DevOps tools like Docker, Kubernetes, and Jenkins — bridging the gap between development and deployment.</p>
+          <div class="about-tags">
+            <span class="tag">C# / .NET</span>
+            <span class="tag">ASP.NET Core</span>
+            <span class="tag">MS SQL</span>
+            <span class="tag">Redis</span>
+            <span class="tag">RabbitMQ</span>
+            <span class="tag">Docker</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <h2 class="section-title">Work <span>Experience</span></h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot current"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-company">Medi Assist Healthcare Service Ltd</h3>
+                <p class="timeline-role">Software Engineer — Backend .NET Developer</p>
+              </div>
+              <span class="timeline-date">Jan 2025 – Present</span>
+            </div>
+            <p class="timeline-desc">Working as a Backend .NET Developer contributing to healthcare software solutions with a focus on scalability and performance.</p>
+            <ul class="timeline-list">
+              <li>Building and maintaining microservices using <strong>ASP.NET Core API</strong></li>
+              <li>Implementing caching strategies with <strong>Redis</strong> for improved performance</li>
+              <li>Designing message-driven workflows using <strong>RabbitMQ</strong></li>
+              <li>Full-text search integration with <strong>ElasticSearch</strong></li>
+              <li>Containerizing services with <strong>Docker</strong></li>
+              <li>Securing APIs with <strong>OAuth, JWT</strong> and <strong>Azure Vault Key</strong></li>
+            </ul>
+            <div class="timeline-projects">
+              <span class="project-chip">Core Auth Server</span>
+              <span class="project-chip">Ecard Service</span>
+              <span class="project-chip">Scan API</span>
+              <span class="project-chip">Cron Job</span>
+            </div>
+            <div class="timeline-tech">
+              <span class="tech-badge">C#</span>
+              <span class="tech-badge">MS SQL</span>
+              <span class="tech-badge">PL-SQL</span>
+              <span class="tech-badge">Redis</span>
+              <span class="tech-badge">RabbitMQ</span>
+              <span class="tech-badge">ElasticSearch</span>
+              <span class="tech-badge">Docker</span>
+              <span class="tech-badge">LINQ</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-company">Octorite Technologies</h3>
+                <p class="timeline-role">Software Engineer — .NET Developer</p>
+              </div>
+              <span class="timeline-date">Mar 2023 – Jan 2025</span>
+            </div>
+            <p class="timeline-desc">Developed full-stack desktop and web applications for the apparel manufacturing industry, including IoT integrations and real-time communication features.</p>
+            <ul class="timeline-list">
+              <li>Built desktop applications using <strong>WinForms</strong> and <strong>Telerik UI</strong></li>
+              <li>Developed web applications with <strong>ASP.NET Core Web API</strong> and <strong>Blazor</strong></li>
+              <li>Integrated <strong>MQTT</strong> protocol for IoT device communication</li>
+              <li>Implemented <strong>RFID</strong> connectivity for real-time item tracking</li>
+              <li>Led on-site software implementation at <strong>Brandix, Sri Lanka</strong></li>
+            </ul>
+            <div class="timeline-projects">
+              <span class="project-chip">Athena Desktop App</span>
+              <span class="project-chip">Athena Web App</span>
+              <span class="project-chip">Athena Chat App</span>
+            </div>
+            <div class="timeline-tech">
+              <span class="tech-badge">C#</span>
+              <span class="tech-badge">MS SQL</span>
+              <span class="tech-badge">MQTT</span>
+              <span class="tech-badge">ASP.NET Core</span>
+              <span class="tech-badge">Blazor</span>
+              <span class="tech-badge">WinForms</span>
+              <span class="tech-badge">Telerik UI</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title">Featured <span>Projects</span></h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-icon">🔐</div>
+          <h3>Core Auth Server</h3>
+          <p>A robust authentication server supporting multiple sign-in methods with advanced security features.</p>
+          <ul class="project-features">
+            <li>OTP, password & two-step verification</li>
+            <li>Concurrent login blocking</li>
+            <li>Token authentication & secure sign-out</li>
+            <li>Token storage in Redis Cache</li>
+          </ul>
+          <div class="project-tech">
+            <span>C#</span><span>ASP.NET Core</span><span>Redis</span><span>JWT</span><span>OAuth</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon">🏭</div>
+          <h3>Athena Web Application</h3>
+          <p>Full-stack web application for the apparel industry with real-time tracking and reporting capabilities.</p>
+          <ul class="project-features">
+            <li>MVC architecture with REST API</li>
+            <li>2-step email verification via SMTP</li>
+            <li>RFID connectivity for real-time tracking</li>
+            <li>RDLC Reports & Dashboard</li>
+          </ul>
+          <div class="project-tech">
+            <span>C#</span><span>MS-SQL</span><span>Blazor</span><span>MQTT</span><span>RFID</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon">💬</div>
+          <h3>Athena Chat App</h3>
+          <p>Real-time chat application integrated within the Athena software ecosystem for team collaboration.</p>
+          <ul class="project-features">
+            <li>Real-time messaging via MQTT</li>
+            <li>Email verification login via SMTP</li>
+            <li>In-app collaboration features</li>
+            <li>Seamless software ecosystem integration</li>
+          </ul>
+          <div class="project-tech">
+            <span>C#</span><span>SQL</span><span>MQTT</span><span>SMTP</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <h2 class="section-title">Technical <span>Skills</span></h2>
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <div class="skill-cat-icon">⚙️</div>
+          <h3>Languages</h3>
+          <div class="skill-items">
+            <div class="skill-item"><span>C#</span><div class="skill-bar"><div class="skill-fill" style="--w:92%"></div></div></div>
+            <div class="skill-item"><span>C++</span><div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div></div>
+            <div class="skill-item"><span>SQL / PL-SQL</span><div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div></div>
+            <div class="skill-item"><span>JavaScript</span><div class="skill-bar"><div class="skill-fill" style="--w:70%"></div></div></div>
+            <div class="skill-item"><span>HTML / CSS</span><div class="skill-bar"><div class="skill-fill" style="--w:72%"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-icon">🌐</div>
+          <h3>.NET Ecosystem</h3>
+          <div class="skill-items">
+            <div class="skill-item"><span>ASP.NET Core API</span><div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div></div>
+            <div class="skill-item"><span>Blazor</span><div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div></div>
+            <div class="skill-item"><span>MVC</span><div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div></div>
+            <div class="skill-item"><span>WinForms / Telerik UI</span><div class="skill-bar"><div class="skill-fill" style="--w:82%"></div></div></div>
+            <div class="skill-item"><span>LINQ</span><div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-icon">🔧</div>
+          <h3>Infrastructure & Tools</h3>
+          <div class="skill-items">
+            <div class="skill-item"><span>Redis (Cache)</span><div class="skill-bar"><div class="skill-fill" style="--w:82%"></div></div></div>
+            <div class="skill-item"><span>RabbitMQ</span><div class="skill-bar"><div class="skill-fill" style="--w:78%"></div></div></div>
+            <div class="skill-item"><span>ElasticSearch</span><div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div></div>
+            <div class="skill-item"><span>Docker</span><div class="skill-bar"><div class="skill-fill" style="--w:78%"></div></div></div>
+            <div class="skill-item"><span>Kubernetes</span><div class="skill-bar"><div class="skill-fill" style="--w:65%"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-icon">🔒</div>
+          <h3>Security & DevOps</h3>
+          <div class="skill-items">
+            <div class="skill-item"><span>OAuth / JWT</span><div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div></div>
+            <div class="skill-item"><span>Azure Vault Key</span><div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div></div>
+            <div class="skill-item"><span>Git / Stash / SVN</span><div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div></div>
+            <div class="skill-item"><span>Jenkins</span><div class="skill-bar"><div class="skill-fill" style="--w:70%"></div></div></div>
+            <div class="skill-item"><span>MQTT</span><div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-icon">🧠</div>
+          <h3>Concepts & Patterns</h3>
+          <div class="skill-tags">
+            <span>OOP</span>
+            <span>SOLID Principles</span>
+            <span>Design Patterns</span>
+            <span>Unit Testing</span>
+            <span>DSA</span>
+            <span>Microservices</span>
+            <span>REST API</span>
+            <span>MVC</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="section" id="education">
+    <div class="container">
+      <h2 class="section-title">My <span>Education</span></h2>
+      <div class="education-grid">
+
+        <div class="edu-card">
+          <div class="edu-icon">🎓</div>
+          <div class="edu-content">
+            <span class="edu-year">2023</span>
+            <h3>B.Tech in Computer Science Engineering</h3>
+            <p class="edu-institute">Birla Institute of Technology, Mesra</p>
+            <div class="edu-score">
+              <span class="score-label">CGPA</span>
+              <span class="score-value">8.4 / 10</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-icon">📚</div>
+          <div class="edu-content">
+            <span class="edu-year">2019</span>
+            <h3>Class XII</h3>
+            <p class="edu-institute">Bihar State Board (BSEB)</p>
+            <div class="edu-score">
+              <span class="score-label">Percentage</span>
+              <span class="score-value">74.2%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-icon">🏫</div>
+          <div class="edu-content">
+            <span class="edu-year">2017</span>
+            <h3>Class X</h3>
+            <p class="edu-institute">Gujarat State Board (GSEB)</p>
+            <div class="edu-score">
+              <span class="score-label">Percentage</span>
+              <span class="score-value">65%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section class="section section-alt" id="achievements">
+    <div class="container">
+      <h2 class="section-title">Achievements & <span>Awards</span></h2>
+      <div class="achievement-card">
+        <div class="achievement-badge">🏆</div>
+        <div class="achievement-content">
+          <h3>Software Implementation Specialist — Brandix, Sri Lanka</h3>
+          <p>Led the successful on-site implementation of enterprise software at Brandix, one of Sri Lanka's leading apparel manufacturers.</p>
+          <ul class="achievement-list">
+            <li>Optimized operational processes and enhanced overall efficiency at Brandix</li>
+            <li>Collaborated with cross-functional teams to understand business requirements and tailor software configurations</li>
+            <li>Conducted on-site training sessions for Brandix staff, ensuring a smooth transition to the new system</li>
+            <li>Maintained regular communication with the development team to relay client feedback for ongoing improvements</li>
+            <li>Earned commendations for excellent customer service and timely technical issue resolution</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Get In <span>Touch</span></h2>
+      <p class="contact-subtitle">I'm open to new opportunities and collaborations. Feel free to reach out!</p>
+      <div class="contact-grid">
+        <a href="mailto:piyushsinghpnbe2000@gmail.com" class="contact-card">
+          <div class="contact-icon">✉️</div>
+          <h3>Email</h3>
+          <p>piyushsinghpnbe2000@gmail.com</p>
+        </a>
+        <a href="tel:+918102140105" class="contact-card">
+          <div class="contact-icon">📞</div>
+          <h3>Phone</h3>
+          <p>+91 8102140105</p>
+        </a>
+        <a href="https://www.linkedin.com/in/singh-piyush-santosh/" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-icon">💼</div>
+          <h3>LinkedIn</h3>
+          <p>singh-piyush-santosh</p>
+        </a>
+        <div class="contact-card no-link">
+          <div class="contact-icon">📍</div>
+          <h3>Location</h3>
+          <p>Bengaluru, Karnataka, India</p>
+        </div>
+        <a href="https://github.com/piyushsinghpnb" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:2rem;height:2rem"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </div>
+          <h3>GitHub</h3>
+          <p>piyushsinghpnb</p>
+        </a>
+        <a href="https://leetcode.com/u/piyushsinghpnbe2000/" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:2rem;height:2rem"><path d="M13.483 0a1.374 1.374 0 00-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 00-1.209 2.104 5.35 5.35 0 00-.125.513 5.527 5.527 0 00.062 2.362 5.83 5.83 0 00.349 1.017 5.938 5.938 0 001.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 00-1.951-.003l-2.396 2.392a3.021 3.021 0 01-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 01.066-.523 2.545 2.545 0 01.619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 00-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0013.483 0zm-2.866 12.815a1.38 1.38 0 00-1.38 1.382 1.38 1.38 0 001.38 1.382H20.79a1.38 1.38 0 001.38-1.382 1.38 1.38 0 00-1.38-1.382z"/></svg>
+          </div>
+          <h3>LeetCode</h3>
+          <p>piyushsinghpnbe2000</p>
+        </a>
+        <a href="https://www.codechef.com/users/nitroracer19" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:2rem;height:2rem"><path d="M11.257 0C7.112.04 3.199 2.694 1.485 6.482c-.897 1.975-1.127 4.225-.76 6.352.368 2.127 1.388 4.13 2.866 5.733 1.45 1.572 3.33 2.73 5.38 3.29 2.05.56 4.24.51 6.26-.15 1.98-.64 3.77-1.85 5.1-3.46 1.33-1.6 2.17-3.57 2.42-5.61.26-2.04-.07-4.15-.95-6.01C20.5 4.1 18.9 2.44 16.97 1.37 15.12.34 12.99-.02 11.257 0zm.536 1.77c1.63-.03 3.27.35 4.7 1.14 1.44.8 2.67 1.98 3.52 3.39.86 1.41 1.33 3.04 1.33 4.68 0 1.64-.47 3.27-1.33 4.68-.85 1.41-2.08 2.59-3.52 3.39-1.43.79-3.07 1.17-4.7 1.14-1.63.03-3.27-.35-4.7-1.14-1.44-.8-2.67-1.98-3.52-3.39C2.26 14.25 1.79 12.62 1.79 10.98c0-1.64.47-3.27 1.33-4.68.85-1.41 2.08-2.59 3.52-3.39 1.43-.79 3.07-1.17 4.7-1.14zm-.07 2.47c-.97.01-1.94.24-2.82.67-.88.43-1.66 1.06-2.27 1.84-.61.78-.99 1.71-1.1 2.68-.11.97.06 1.96.49 2.84.43.88 1.1 1.64 1.93 2.18.83.54 1.79.84 2.77.87.98.03 1.96-.21 2.82-.69.86-.48 1.58-1.19 2.07-2.05.49-.86.73-1.84.69-2.82-.04-.98-.35-1.94-.9-2.76-.55-.82-1.32-1.48-2.21-1.9-.89-.42-1.88-.62-2.87-.61l.4.75z"/></svg>
+          </div>
+          <h3>CodeChef</h3>
+          <p>nitroracer19</p>
+        </a>
+      </div>
+
+      <div class="resume-download-banner">
+        <div class="resume-banner-text">
+          <span class="resume-banner-icon">📄</span>
+          <div>
+            <h3>Want a copy of my resume?</h3>
+            <p>Download the full PDF version of my resume to review offline.</p>
+          </div>
+        </div>
+        <a href="assets/resume.pdf" download="Singh_Piyush_Santosh_Resume.pdf" class="btn btn-primary resume-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume
+        </a>
+      </div>
+
+      <div class="resume-download-banner cover-banner">
+        <div class="resume-banner-text">
+          <span class="resume-banner-icon">✉️</span>
+          <div>
+            <h3>Want to read my cover letter?</h3>
+            <p>View or save my cover letter as a PDF directly from your browser.</p>
+          </div>
+        </div>
+        <a href="assets/cover-letter.html" target="_blank" rel="noopener" class="btn btn-download resume-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View Cover Letter
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Designed & Built by <strong>Singh Piyush Santosh</strong></p>
+      <p class="footer-sub">Full Stack .NET Developer · Bengaluru, India</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

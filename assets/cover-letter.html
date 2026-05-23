@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cover Letter — Singh Piyush Santosh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0f2f5;
+      color: #1a1a2e;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    /* Print/Save as PDF button — hidden when printing */
+    .print-bar {
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .print-btn {
+      background: #6c63ff;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.2s;
+    }
+    .print-btn:hover { background: #5a52d5; }
+    .print-btn svg { width: 15px; height: 15px; }
+
+    .back-btn {
+      background: transparent;
+      color: #6c63ff;
+      border: 2px solid #6c63ff;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .back-btn:hover { background: #6c63ff; color: white; }
+
+    /* ===== LETTER PAPER ===== */
+    .letter {
+      width: 100%;
+      max-width: 800px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+      overflow: hidden;
+    }
+
+    /* Header band */
+    .letter-header {
+      background: linear-gradient(135deg, #6c63ff, #00d4aa);
+      padding: 2.5rem 3rem;
+      color: white;
+    }
+
+    .letter-header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .letter-header p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-top: 0.25rem;
+    }
+
+    .header-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .header-contact span {
+      font-size: 0.82rem;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* Body */
+    .letter-body {
+      padding: 2.5rem 3rem;
+    }
+
+    .letter-date {
+      font-size: 0.875rem;
+      color: #666;
+      margin-bottom: 1.75rem;
+    }
+
+    .letter-recipient {
+      margin-bottom: 1.75rem;
+    }
+    .letter-recipient p {
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.6;
+    }
+    .letter-recipient strong {
+      color: #1a1a2e;
+      font-size: 0.95rem;
+    }
+
+    .letter-subject {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #6c63ff;
+      border-left: 4px solid #6c63ff;
+      padding-left: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .letter-body p {
+      font-size: 0.92rem;
+      color: #333;
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+
+    .highlight-box {
+      background: #f7f6ff;
+      border: 1px solid #e0deff;
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .highlight-box p {
+      margin: 0;
+      font-size: 0.875rem;
+      color: #444;
+    }
+
+    .highlight-box ul {
+      list-style: none;
+      margin-top: 0.75rem;
+    }
+
+    .highlight-box ul li {
+      font-size: 0.875rem;
+      color: #444;
+      padding: 0.25rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .highlight-box ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #6c63ff;
+    }
+
+    .letter-closing {
+      margin-top: 2rem;
+    }
+
+    .letter-closing p {
+      margin-bottom: 0.25rem;
+    }
+
+    .signature {
+      margin-top: 1.5rem;
+    }
+
+    .signature-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    .signature-title {
+      font-size: 0.85rem;
+      color: #6c63ff;
+      font-weight: 500;
+    }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: #eee;
+      margin: 1.5rem 0;
+    }
+
+    /* Footer of letter */
+    .letter-footer {
+      background: #f7f6ff;
+      border-top: 1px solid #e0deff;
+      padding: 1rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .letter-footer span {
+      font-size: 0.78rem;
+      color: #888;
+    }
+
+    .letter-footer strong { color: #6c63ff; }
+
+    /* ===== PRINT STYLES ===== */
+    @media print {
+      body { background: white; padding: 0; }
+      .print-bar { display: none; }
+      .letter {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: 100%;
+      }
+      @page { margin: 0; size: A4; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Action Bar -->
+  <div class="print-bar">
+    <a href="../index.html" class="back-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to Portfolio
+    </a>
+    <button class="print-btn" onclick="window.print()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Save as PDF
+    </button>
+  </div>
+
+  <!-- Letter -->
+  <div class="letter">
+
+    <!-- Header -->
+    <div class="letter-header">
+      <h1>Singh Piyush Santosh</h1>
+      <p>Full Stack .NET Developer</p>
+      <div class="header-contact">
+        <span>📧 piyushsinghpnbe2000@gmail.com</span>
+        <span>📞 +91 8102140105</span>
+        <span>📍 Bengaluru, Karnataka, India</span>
+        <span>💼 linkedin.com/in/singh-piyush-santosh</span>
+        <span>🐙 github.com/piyushsinghpnb</span>
+        <span>💻 leetcode.com/piyushsinghpnbe2000</span>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="letter-body">
+
+      <p class="letter-date">May 23, 2026</p>
+
+      <div class="letter-recipient">
+        <p><strong>Hiring Manager</strong></p>
+        <p>[Company Name]</p>
+        <p>[Company Address]</p>
+      </div>
+
+      <p class="letter-subject">Re: Application for Software Engineer / .NET Developer Position</p>
+
+      <p>Dear Hiring Manager,</p>
+
+      <p>
+        I am writing to express my strong interest in the Software Engineer position at your organization.
+        With over two years of professional experience as a Full Stack .NET Developer, I have built a solid
+        foundation in designing, developing, and maintaining scalable backend systems using C#, ASP.NET Core,
+        MS SQL, and a range of modern infrastructure technologies.
+      </p>
+
+      <p>
+        Currently, I am working at <strong>Medi Assist Healthcare Service Ltd</strong> as a Software Engineer,
+        where I contribute to mission-critical healthcare services. My responsibilities include building
+        microservices with ASP.NET Core API, implementing Redis caching strategies, designing RabbitMQ
+        message-driven workflows, and integrating ElasticSearch for full-text search. I also work with
+        Docker for containerization and secure APIs using OAuth, JWT, and Azure Vault Key.
+      </p>
+
+      <div class="highlight-box">
+        <p><strong>Key highlights from my experience:</strong></p>
+        <ul>
+          <li>Developed a Core Auth Server supporting OTP, password, and two-step verification with concurrent login blocking and token caching</li>
+          <li>Built the Athena Web Application for the apparel industry with RFID real-time tracking, MQTT integration, and RDLC reporting</li>
+          <li>Created a real-time Chat Application using C#, SQL, and MQTT with SMTP-based email verification</li>
+          <li>Led on-site software implementation at Brandix, Sri Lanka — conducted staff training and ensured smooth system transition</li>
+          <li>Proficient in SOLID principles, Design Patterns, OOP, Unit Testing, and DevOps tools including Jenkins, Docker, and Kubernetes</li>
+        </ul>
+      </div>
+
+      <p>
+        Prior to my current role, I worked at <strong>Octorite Technologies</strong> where I developed
+        desktop and web applications for the apparel manufacturing industry. This experience gave me
+        deep exposure to WinForms, Telerik UI, Blazor, and IoT integrations using MQTT and RFID protocols.
+        I also had the opportunity to represent the company internationally as a Software Implementation
+        Specialist, which strengthened my communication and client-facing skills.
+      </p>
+
+      <p>
+        I hold a <strong>B.Tech in Computer Science Engineering</strong> from Birla Institute of Technology,
+        Mesra, with a CGPA of 8.4/10. My academic background, combined with hands-on industry experience,
+        has equipped me with both the theoretical knowledge and practical skills to deliver high-quality
+        software solutions.
+      </p>
+
+      <p>
+        I am excited about the opportunity to bring my technical expertise and problem-solving mindset to
+        your team. I am confident that my background aligns well with your requirements, and I would welcome
+        the chance to discuss how I can contribute to your organization's goals.
+      </p>
+
+      <p>
+        Thank you for considering my application. I look forward to the opportunity to speak with you further.
+      </p>
+
+      <div class="divider"></div>
+
+      <div class="letter-closing">
+        <p>Warm regards,</p>
+        <div class="signature">
+          <p class="signature-name">Singh Piyush Santosh</p>
+          <p class="signature-title">Full Stack .NET Developer</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Letter Footer -->
+    <div class="letter-footer">
+      <span>📧 piyushsinghpnbe2000@gmail.com</span>
+      <span>📞 +91 8102140105</span>
+      <span>Prepared by <strong>Singh Piyush Santosh</strong></span>
+    </div>
+
+  </div>
+
+</body>
+</html>
