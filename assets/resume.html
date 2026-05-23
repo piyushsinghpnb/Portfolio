@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume — Singh Piyush Santosh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0f2f5;
+      color: #1a1a2e;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    /* ===== ACTION BAR ===== */
+    .print-bar {
+      width: 100%;
+      max-width: 860px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .print-btn {
+      background: #6c63ff;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    .print-btn:hover { background: #5a52d5; }
+    .print-btn svg { width: 15px; height: 15px; }
+
+    .back-btn {
+      background: transparent;
+      color: #6c63ff;
+      border: 2px solid #6c63ff;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    .back-btn:hover { background: #6c63ff; color: white; }
+    .back-btn svg { width: 15px; height: 15px; }
+
+    /* ===== RESUME PAPER ===== */
+    .resume {
+      width: 100%;
+      max-width: 860px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+      overflow: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    .resume-header {
+      background: linear-gradient(135deg, #6c63ff, #00d4aa);
+      padding: 2.5rem 3rem;
+      color: white;
+    }
+
+    .resume-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .resume-header .title {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-top: 0.3rem;
+      font-weight: 500;
+    }
+
+    .header-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+      margin-top: 1.25rem;
+    }
+
+    .header-contact a,
+    .header-contact span {
+      font-size: 0.82rem;
+      opacity: 0.92;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: white;
+      text-decoration: none;
+    }
+    .header-contact a:hover { opacity: 1; text-decoration: underline; }
+
+    /* ===== BODY ===== */
+    .resume-body {
+      display: grid;
+      grid-template-columns: 1fr 2.2fr;
+      gap: 0;
+    }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar {
+      background: #f7f6ff;
+      border-right: 1px solid #e0deff;
+      padding: 2rem 1.5rem;
+    }
+
+    .sidebar-section { margin-bottom: 2rem; }
+    .sidebar-section:last-child { margin-bottom: 0; }
+
+    .sidebar-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #6c63ff;
+      border-bottom: 2px solid #e0deff;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Skills */
+    .skill-group { margin-bottom: 1rem; }
+    .skill-group-name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 0.4rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+    .skill-tag {
+      background: #ede9ff;
+      color: #5a52d5;
+      border: 1px solid #d4cfff;
+      padding: 0.2rem 0.55rem;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      font-family: 'Fira Code', monospace;
+    }
+
+    /* Education sidebar */
+    .edu-item { margin-bottom: 1rem; }
+    .edu-item:last-child { margin-bottom: 0; }
+
+    .edu-degree {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #1a1a2e;
+      line-height: 1.4;
+    }
+
+    .edu-school {
+      font-size: 0.75rem;
+      color: #555;
+      margin-top: 0.15rem;
+    }
+
+    .edu-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.25rem;
+    }
+
+    .edu-score {
+      font-size: 0.72rem;
+      color: #6c63ff;
+      font-weight: 600;
+    }
+
+    .edu-year {
+      font-size: 0.72rem;
+      color: #888;
+    }
+
+    /* Profiles sidebar */
+    .profile-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.78rem;
+      color: #444;
+    }
+    .profile-item:last-child { margin-bottom: 0; }
+    .profile-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #6c63ff;
+      flex-shrink: 0;
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    .main-content { padding: 2rem 2.5rem; }
+
+    .section { margin-bottom: 2rem; }
+    .section:last-child { margin-bottom: 0; }
+
+    .section-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #6c63ff;
+      border-bottom: 2px solid #e0deff;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Objective */
+    .objective-text {
+      font-size: 0.88rem;
+      color: #444;
+      line-height: 1.75;
+    }
+
+    /* Experience */
+    .exp-item { margin-bottom: 1.5rem; }
+    .exp-item:last-child { margin-bottom: 0; }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .exp-company {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    .exp-date {
+      font-size: 0.75rem;
+      color: #888;
+      white-space: nowrap;
+      background: #ede9ff;
+      padding: 0.15rem 0.6rem;
+      border-radius: 50px;
+      font-weight: 500;
+    }
+
+    .exp-role {
+      font-size: 0.82rem;
+      color: #6c63ff;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .exp-list {
+      list-style: none;
+      margin-bottom: 0.75rem;
+    }
+
+    .exp-list li {
+      font-size: 0.82rem;
+      color: #444;
+      padding: 0.2rem 0 0.2rem 1.1rem;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .exp-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #00d4aa;
+      font-size: 0.75rem;
+      top: 0.28rem;
+    }
+
+    .exp-list strong { color: #1a1a2e; }
+
+    .exp-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .chip {
+      background: #e8fdf8;
+      color: #00a884;
+      border: 1px solid #b3f0e3;
+      padding: 0.15rem 0.55rem;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+
+    .tech-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+    .tech-tag {
+      background: #f0f0f0;
+      color: #555;
+      border: 1px solid #ddd;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-family: 'Fira Code', monospace;
+    }
+
+    /* Projects */
+    .project-item { margin-bottom: 1.25rem; }
+    .project-item:last-child { margin-bottom: 0; }
+
+    .project-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-list {
+      list-style: none;
+    }
+
+    .project-list li {
+      font-size: 0.8rem;
+      color: #444;
+      padding: 0.15rem 0 0.15rem 1.1rem;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .project-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #6c63ff;
+      font-size: 0.7rem;
+      top: 0.28rem;
+    }
+
+    /* Achievements */
+    .achievement-item {
+      background: #f7f6ff;
+      border-left: 3px solid #6c63ff;
+      border-radius: 0 6px 6px 0;
+      padding: 0.75rem 1rem;
+    }
+
+    .achievement-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 0.5rem;
+    }
+
+    .achievement-list {
+      list-style: none;
+    }
+
+    .achievement-list li {
+      font-size: 0.8rem;
+      color: #444;
+      padding: 0.15rem 0 0.15rem 1.1rem;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .achievement-list li::before {
+      content: '★';
+      position: absolute;
+      left: 0;
+      color: #6c63ff;
+      font-size: 0.65rem;
+      top: 0.3rem;
+    }
+
+    /* ===== FOOTER ===== */
+    .resume-footer {
+      background: #f7f6ff;
+      border-top: 1px solid #e0deff;
+      padding: 0.85rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .resume-footer span {
+      font-size: 0.75rem;
+      color: #888;
+    }
+
+    .resume-footer strong { color: #6c63ff; }
+
+    /* ===== PRINT STYLES ===== */
+    @media print {
+      body { background: white; padding: 0; }
+      .print-bar { display: none; }
+      .resume {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: 100%;
+      }
+      @page { margin: 0; size: A4; }
+    }
+
+    @media (max-width: 640px) {
+      .resume-body { grid-template-columns: 1fr; }
+      .sidebar { border-right: none; border-bottom: 1px solid #e0deff; }
+      .resume-header { padding: 1.75rem 1.5rem; }
+      .main-content { padding: 1.5rem; }
+      .sidebar { padding: 1.5rem; }
+      .resume-footer { padding: 0.85rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Action Bar -->
+  <div class="print-bar">
+    <a href="../index.html" class="back-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to Portfolio
+    </a>
+    <button class="print-btn" onclick="window.print()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Save as PDF
+    </button>
+  </div>
+
+  <!-- Resume -->
+  <div class="resume">
+
+    <!-- Header -->
+    <div class="resume-header">
+      <h1>Singh Piyush Santosh</h1>
+      <p class="title">Full Stack .NET Developer</p>
+      <div class="header-contact">
+        <span>📧 piyushsinghpnbe2000@gmail.com</span>
+        <span>📞 +91 8102140105</span>
+        <span>📍 Bengaluru, Karnataka, India</span>
+        <a href="https://www.linkedin.com/in/singh-piyush-santosh/" target="_blank" rel="noopener">💼 linkedin.com/in/singh-piyush-santosh</a>
+        <a href="https://github.com/piyushsinghpnb" target="_blank" rel="noopener">🐙 github.com/piyushsinghpnb</a>
+        <a href="https://leetcode.com/u/piyushsinghpnbe2000/" target="_blank" rel="noopener">💻 leetcode.com/piyushsinghpnbe2000</a>
+        <a href="https://www.codechef.com/users/nitroracer19" target="_blank" rel="noopener">👨‍🍳 codechef.com/nitroracer19</a>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="resume-body">
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+
+        <!-- Skills -->
+        <div class="sidebar-section">
+          <p class="sidebar-title">Skills</p>
+
+          <div class="skill-group">
+            <p class="skill-group-name">Languages</p>
+            <div class="skill-tags">
+              <span class="skill-tag">C#</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">PL-SQL</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">HTML/CSS</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-name">.NET Ecosystem</p>
+            <div class="skill-tags">
+              <span class="skill-tag">ASP.NET Core</span>
+              <span class="skill-tag">Web API</span>
+              <span class="skill-tag">MVC</span>
+              <span class="skill-tag">Blazor</span>
+              <span class="skill-tag">WinForms</span>
+              <span class="skill-tag">LINQ</span>
+              <span class="skill-tag">Telerik UI</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-name">Infrastructure</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Redis</span>
+              <span class="skill-tag">RabbitMQ</span>
+              <span class="skill-tag">ElasticSearch</span>
+              <span class="skill-tag">MQTT</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Kubernetes</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-name">Security & Auth</p>
+            <div class="skill-tags">
+              <span class="skill-tag">OAuth</span>
+              <span class="skill-tag">JWT</span>
+              <span class="skill-tag">Azure Vault</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-name">DevOps & VCS</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">Stash</span>
+              <span class="skill-tag">SVN</span>
+              <span class="skill-tag">Jenkins</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-name">Concepts</p>
+            <div class="skill-tags">
+              <span class="skill-tag">OOP</span>
+              <span class="skill-tag">SOLID</span>
+              <span class="skill-tag">Design Patterns</span>
+              <span class="skill-tag">Unit Testing</span>
+              <span class="skill-tag">DSA</span>
+              <span class="skill-tag">Microservices</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="sidebar-section">
+          <p class="sidebar-title">Education</p>
+
+          <div class="edu-item">
+            <p class="edu-degree">B.Tech — Computer Science Engineering</p>
+            <p class="edu-school">Birla Institute of Technology, Mesra</p>
+            <div class="edu-meta">
+              <span class="edu-score">CGPA: 8.4 / 10</span>
+              <span class="edu-year">2023</span>
+            </div>
+          </div>
+
+          <div class="edu-item">
+            <p class="edu-degree">Class XII</p>
+            <p class="edu-school">Bihar State Board (BSEB)</p>
+            <div class="edu-meta">
+              <span class="edu-score">74.2%</span>
+              <span class="edu-year">2019</span>
+            </div>
+          </div>
+
+          <div class="edu-item">
+            <p class="edu-degree">Class X</p>
+            <p class="edu-school">Gujarat State Board (GSEB)</p>
+            <div class="edu-meta">
+              <span class="edu-score">65%</span>
+              <span class="edu-year">2017</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coding Profiles -->
+        <div class="sidebar-section">
+          <p class="sidebar-title">Coding Profiles</p>
+          <div class="profile-item">
+            <span class="profile-dot"></span>
+            <span>GitHub: piyushsinghpnb</span>
+          </div>
+          <div class="profile-item">
+            <span class="profile-dot"></span>
+            <span>LeetCode: piyushsinghpnbe2000</span>
+          </div>
+          <div class="profile-item">
+            <span class="profile-dot"></span>
+            <span>CodeChef: nitroracer19</span>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+
+        <!-- Objective -->
+        <div class="section">
+          <p class="section-title">Objective</p>
+          <p class="objective-text">
+            Full Stack .NET Developer proficient in C#, MS SQL, PL-SQL, and the .NET Framework. Experienced in
+            building and maintaining robust, scalable software solutions with a focus on backend architecture,
+            API design, and cloud-ready deployments. Passionate about clean code, SOLID principles, and
+            delivering excellent user experiences.
+          </p>
+        </div>
+
+        <!-- Experience -->
+        <div class="section">
+          <p class="section-title">Experience</p>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <span class="exp-company">Medi Assist Healthcare Service Ltd</span>
+              <span class="exp-date">Jan 2025 – Present</span>
+            </div>
+            <p class="exp-role">Software Engineer — Backend .NET Developer</p>
+            <ul class="exp-list">
+              <li>Building and maintaining microservices using <strong>ASP.NET Core API</strong></li>
+              <li>Implementing caching strategies with <strong>Redis</strong> for improved performance</li>
+              <li>Designing message-driven workflows using <strong>RabbitMQ</strong></li>
+              <li>Full-text search integration with <strong>ElasticSearch</strong></li>
+              <li>Containerizing services with <strong>Docker</strong></li>
+              <li>Securing APIs with <strong>OAuth, JWT</strong> and <strong>Azure Vault Key</strong></li>
+            </ul>
+            <div class="exp-chips">
+              <span class="chip">Core Auth Server</span>
+              <span class="chip">Ecard Service</span>
+              <span class="chip">Scan API</span>
+              <span class="chip">Cron Job</span>
+            </div>
+            <div class="tech-row">
+              <span class="tech-tag">C#</span>
+              <span class="tech-tag">MS SQL</span>
+              <span class="tech-tag">PL-SQL</span>
+              <span class="tech-tag">Redis</span>
+              <span class="tech-tag">RabbitMQ</span>
+              <span class="tech-tag">ElasticSearch</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">LINQ</span>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <span class="exp-company">Octorite Technologies, Bangalore</span>
+              <span class="exp-date">Mar 2023 – Jan 2025</span>
+            </div>
+            <p class="exp-role">Software Engineer — .NET Developer</p>
+            <ul class="exp-list">
+              <li>Built desktop applications using <strong>WinForms</strong> and <strong>Telerik UI</strong></li>
+              <li>Developed web applications with <strong>ASP.NET Core Web API</strong> and <strong>Blazor</strong></li>
+              <li>Integrated <strong>MQTT</strong> protocol for IoT device communication</li>
+              <li>Implemented <strong>RFID</strong> connectivity for real-time item tracking in apparel manufacturing</li>
+              <li>Led on-site software implementation at <strong>Brandix, Sri Lanka</strong></li>
+            </ul>
+            <div class="exp-chips">
+              <span class="chip">Athena Desktop App</span>
+              <span class="chip">Athena Web App</span>
+              <span class="chip">Athena Chat App</span>
+            </div>
+            <div class="tech-row">
+              <span class="tech-tag">C#</span>
+              <span class="tech-tag">MS SQL</span>
+              <span class="tech-tag">MQTT</span>
+              <span class="tech-tag">ASP.NET Core</span>
+              <span class="tech-tag">Blazor</span>
+              <span class="tech-tag">WinForms</span>
+              <span class="tech-tag">Telerik UI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="section">
+          <p class="section-title">Projects</p>
+
+          <div class="project-item">
+            <p class="project-name">🔐 Core Auth Server</p>
+            <ul class="project-list">
+              <li>Authentication server supporting OTP, password, and two-step verification</li>
+              <li>Handles concurrent login blocking, token authentication, and secure sign-out</li>
+              <li>Token storage in Redis Cache for fast retrieval</li>
+            </ul>
+          </div>
+
+          <div class="project-item">
+            <p class="project-name">🏭 Athena Web Application</p>
+            <ul class="project-list">
+              <li>Web app using C#, MS-SQL, MVC, REST API, Blazor, Telerik UI for apparel industry</li>
+              <li>2-step email verification via SMTP with Authentication & Authorization</li>
+              <li>RFID connectivity for real-time item tracking and production planning</li>
+              <li>Dashboard and RDLC Report generation</li>
+            </ul>
+          </div>
+
+          <div class="project-item">
+            <p class="project-name">💬 Athena Chat App</p>
+            <ul class="project-list">
+              <li>Real-time chat using C#, SQL, and MQTT with SMTP email verification</li>
+              <li>Enables real-time conversations and collaboration within the software ecosystem</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="section">
+          <p class="section-title">Achievements & Awards</p>
+          <div class="achievement-item">
+            <p class="achievement-title">🏆 Software Implementation Specialist — Brandix, Sri Lanka</p>
+            <ul class="achievement-list">
+              <li>Led successful on-site software implementation, optimizing operational processes</li>
+              <li>Collaborated with cross-functional teams to tailor software configurations to business needs</li>
+              <li>Conducted on-site training sessions ensuring smooth transition to the new system</li>
+              <li>Maintained communication with dev team to relay client feedback for ongoing improvements</li>
+              <li>Earned commendations for excellent customer service and timely issue resolution</li>
+            </ul>
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <div class="resume-footer">
+      <span>📧 piyushsinghpnbe2000@gmail.com</span>
+      <span>📞 +91 8102140105</span>
+      <span>Resume of <strong>Singh Piyush Santosh</strong> · Full Stack .NET Developer</span>
+    </div>
+
+  </div>
+
+</body>
+</html>

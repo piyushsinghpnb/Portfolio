@@ -6,6 +6,30 @@ document.querySelectorAll('[data-scroll]').forEach(btn => {
   });
 });
 
+// ===== ACTION BUTTONS (email, phone, download, cover letter) =====
+document.querySelectorAll('[data-action]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    switch (btn.dataset.action) {
+      case 'email':
+        window.location.href = 'mailto:piyushsinghpnbe2000@gmail.com';
+        break;
+      case 'phone':
+        window.location.href = 'tel:+918102140105';
+        break;
+      case 'download-resume': {
+        const a = document.createElement('a');
+        a.href = 'assets/resume.pdf';
+        a.download = 'Singh_Piyush_Santosh_Resume.pdf';
+        a.click();
+        break;
+      }
+      case 'cover-letter':
+        window.open('assets/cover-letter.html', '_blank', 'noopener');
+        break;
+    }
+  });
+});
+
 // ===== NAVBAR SCROLL =====
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
